@@ -4,14 +4,6 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <!-- [(ngModel)] means two-way data binding -->
-      <input [(ngModel)]="selectedHero.name" placeholder="name" />
-    </label>
-  </div>
-</div>
+<!-- one way data binding -->
+<!-- bind the selected hero to the detail component's hero -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
